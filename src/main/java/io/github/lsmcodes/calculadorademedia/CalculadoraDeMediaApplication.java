@@ -25,6 +25,9 @@ public class CalculadoraDeMediaApplication {
 
 		System.out.printf("\nMédia dos alunos: %.1f.", media);
 
+		System.out.println("\n");
+		imprimirStackTrace();
+
 	}
 
 	public static double calcularMedia(String[] estudantes) {
@@ -32,7 +35,7 @@ public class CalculadoraDeMediaApplication {
 		double total = 0;
 		Integer quatidadeEstudantes = estudantes.length;
 
-		for(String estudante : estudantes) {
+		for (String estudante : estudantes) {
 			System.out.printf("\nDigite a nota de %s:", estudante);
 
 			double nota = scanner.nextDouble();
@@ -41,6 +44,16 @@ public class CalculadoraDeMediaApplication {
 
 		return total / quatidadeEstudantes;
 
+	}
+
+	public static void imprimirStackTrace() {
+
+		StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
+
+		for (StackTraceElement element : stackTrace) {
+			System.out.println(element.getClassName() + "." + element.getMethodName() + "("
+					+ element.getFileName() + ":" + element.getLineNumber() + ")");
+		}
 	}
 
 }
