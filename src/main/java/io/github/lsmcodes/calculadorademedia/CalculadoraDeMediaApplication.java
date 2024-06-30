@@ -33,7 +33,7 @@ public class CalculadoraDeMediaApplication {
 	public static double calcularMedia(String[] estudantes) {
 
 		double total = 0;
-		Integer quatidadeEstudantes = estudantes.length;
+		Integer quantidadeEstudantes = estudantes.length;
 
 		for (String estudante : estudantes) {
 			System.out.printf("\nDigite a nota de %s:", estudante);
@@ -42,7 +42,7 @@ public class CalculadoraDeMediaApplication {
 			total += nota;
 		}
 
-		return total / quatidadeEstudantes;
+		return total / quantidadeEstudantes;
 
 	}
 
